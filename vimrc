@@ -2,6 +2,9 @@ syntax on
 color desert
 
 set nu
+set relativenumber
+
+set cursorline
 set laststatus=2
 
 set nobackup
@@ -25,7 +28,6 @@ set showmatch
 set fileencoding=utf8
 set fileencodings=ucs-bom,utf8,big5,prc
 set encoding=utf-8
-set guifontwide=NSimsun:h12
 
 set path+=**
 set wildmenu
