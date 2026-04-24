@@ -1,0 +1,14 @@
+[user]
+    email = davidfung@amgcomputing.com
+    name = davidfung
+[alias]
+    stat = status
+    st = status
+    logg = log --oneline --graph --all --decorate
+    logd = log --pretty=format:'%h %ad %s (%an)' --date=short --graph --all
+    showst1 = show --stat --oneline
+[push]
+    default = simple
+[core]
+    eol = lf
+    autocrlf = input

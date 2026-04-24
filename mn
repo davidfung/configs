@@ -1,0 +1,43 @@
+#!/bin/bash 
+#
+# NOTES
+# 1. for cd (change directory) to work, has to source run this script.
+# 2. add to ~/.bash_profile or ~/.bashrc PATH=~/.bin:${PATH}
+# 3. do not put any sensitive data in this script
+# 4. read in sensitive info instead of pass in via command line
+#
+# CHANGE HISTORY
+# dkf 110922 creation
+# dkf 120420 add usage function
+# dkf 131031 edit itself without hardcoding path
+
+function usage {
+    echo ""
+	echo "Usage: mn command"
+    echo "Command list:"
+    echo "1 - xxx"
+    echo "2 - xxx"
+}
+
+case "$1" in
+
+    0)
+    # edit itself
+    vim $0
+    ;;
+
+    1)
+    # do something
+	;;
+
+    2)
+    # do something
+	;;
+
+    *)
+    usage
+	;;
+
+esac
+
+
