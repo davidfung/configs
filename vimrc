@@ -2,9 +2,9 @@ syntax on
 color desert
 
 set nu
-set relativenumber
+"set relativenumber
 
-set cursorline
+"set cursorline
 set laststatus=2
 
 set nobackup
@@ -35,6 +35,7 @@ set showcmd
 
 " mappings
 let g:mapleader=" "
+let g:netrw_keepdir=0
 
 " toggle highlighting last search
 nnoremap <F3> :set hlsearch!<CR>
@@ -55,6 +56,6 @@ imap jj <esc>
 call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
-
 
