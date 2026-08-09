@@ -42,10 +42,11 @@ nnoremap <F3> :set hlsearch!<CR>
 " list all buffers and select one
 nnoremap <F5> :buffers<CR>:buffer <Space>
 
-" nmap <C-n> :bnext<CR>
-" nmap <C-p> :bprev<CR>
-" nmap <C-e> :e#<CR>
-nmap <leader>tt :e ~/doc/TODO<CR>
+" edit todo file
+nmap <leader>td :e ~/doc/TODO<CR>
+" comment out a statement
+nmap <leader>\\ ^i//<esc>j^
+" escape
 imap jj <esc>
 
 " Plugin Manager
