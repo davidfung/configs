@@ -42,16 +42,21 @@ let g:netrw_keepdir=0
 
 " toggle highlighting last search
 nnoremap <F3> :set hlsearch!<CR>
+
 " list all buffers and select one
 nnoremap <F5> :buffers<CR>:buffer <Space>
 
 " edit todo file
 nmap <leader>td :e ~/doc/TODO<CR>
+nmap <leader>doc :e ~/doc<CR>
+
 " comment out a statement
 nmap <leader>cc ^i//<esc>j^
+
 " edit .vimrc
 nmap <leader>rc :e $MYVIMRC<CR>
 
+inoremap <tab> <esc>
 inoremap jj <esc>
 inoremap <tab> <esc>
 nnoremap <esc><esc> :noh<return><esc>
