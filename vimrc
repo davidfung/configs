@@ -2,7 +2,7 @@ syntax on
 color desert
 
 set nu
-"set relativenumber
+set relativenumber
 
 "set cursorline
 set laststatus=2
@@ -30,8 +30,11 @@ set fileencodings=ucs-bom,utf8,big5,prc
 set encoding=utf-8
 
 set path+=**
+set wildignore+=**/.git/**
 set wildmenu
 set showcmd
+
+set hidden
 
 " mappings
 let g:mapleader=" "
@@ -45,9 +48,15 @@ nnoremap <F5> :buffers<CR>:buffer <Space>
 " edit todo file
 nmap <leader>td :e ~/doc/TODO<CR>
 " comment out a statement
-nmap <leader>\\ ^i//<esc>j^
-" escape
-imap jj <esc>
+nmap <leader>cc ^i//<esc>j^
+" edit .vimrc
+nmap <leader>rc :e $MYVIMRC<CR>
+
+inoremap jj <esc>
+inoremap <tab> <esc>
+nnoremap <esc><esc> :noh<return><esc>
+
+iabbrev <expr> idate strftime("%Y-%m-%d")
 
 " Plugin Manager
 " Download plug.vim and put it in the "autoload" directory.
@@ -55,8 +64,10 @@ imap jj <esc>
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 call plug#begin()
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
+
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
