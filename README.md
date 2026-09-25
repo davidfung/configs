@@ -5,4 +5,4 @@ A collection of config files.
 ## Windows 10 ##
 
   - c:\users\<name>\.gitconfig
-  - c:\users\<name>\.vimrc
+  - c:\users\<name>\.vim\vimrc
