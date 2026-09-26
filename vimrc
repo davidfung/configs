@@ -1,3 +1,6 @@
+" linux: ~/.vim/vimrc
+" windows: ~/vimfiles/vimrc
+
 syntax on
 color desert
 
