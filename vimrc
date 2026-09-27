@@ -66,6 +66,12 @@ nnoremap <esc><esc> :noh<return><esc>
 
 iabbrev <expr> idate strftime("%Y-%m-%d")
 
+" Include other custom config files
+let s:config_dir = fnamemodify($MYVIMRC, ':h')
+for f in split(glob(s:config_dir . '/config/*.vim'), '\n')
+    execute 'source' f
+endfor
+
 " Plugin Manager
 " Download plug.vim and put it in the "autoload" directory.
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
