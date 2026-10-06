@@ -39,7 +39,7 @@ set showcmd
 
 set hidden
 
-" mappings
+" globals
 let g:mapleader=" "
 let g:netrw_keepdir=0
 
@@ -62,15 +62,10 @@ nmap <leader>rc :e $MYVIMRC<CR>
 inoremap <tab> <esc>
 inoremap jj <esc>
 inoremap <tab> <esc>
+
 nnoremap <esc><esc> :noh<return><esc>
 
 iabbrev <expr> idate strftime("%Y-%m-%d")
-
-" Include other custom config files
-let s:config_dir = fnamemodify($MYVIMRC, ':h')
-for f in split(glob(s:config_dir . '/config/*.vim'), '\n')
-    execute 'source' f
-endfor
 
 " Plugin Manager
 " Download plug.vim and put it in the "autoload" directory.
@@ -84,4 +79,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+
+" Include custom config last, so that it can override the default.
+let s:custom_dir = fnamemodify($MYVIMRC, ':h')
+for f in split(glob(s:custom_dir . '/custom/*.vim'), '\n')
+    execute 'source' f
+endfor
 
