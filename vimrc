@@ -6,6 +6,7 @@ color desert
 
 set nu
 set relativenumber
+set clipboard=unnamed
 
 "set cursorline
 set laststatus=2
@@ -37,7 +38,7 @@ set wildignore+=**/.git/**
 set wildmenu
 set showcmd
 
-set hidden
+"set hidden
 
 " globals
 let g:mapleader=" "
@@ -50,14 +51,14 @@ nnoremap <F3> :set hlsearch!<CR>
 nnoremap <F5> :buffers<CR>:buffer <Space>
 
 " edit todo file
-nmap <leader>td :e ~/doc/TODO<CR>
-nmap <leader>doc :e ~/doc<CR>
+nmap <leader>td :e ~/TODO<CR>
 
 " comment out a statement
 nmap <leader>cc ^i//<esc>j^
 
-" edit .vimrc
-nmap <leader>rc :e $MYVIMRC<CR>
+" edit vimrc
+nnoremap <leader>rc :e $MYVIMRC<CR>
+nnoremap <leader>cu :execute 'edit ' . fnameescape(fnamemodify($MYVIMRC, ':p:h'))<CR>
 
 inoremap <tab> <esc>
 inoremap jj <esc>
